@@ -12,8 +12,8 @@
 export default function getSeason(date) {
 
   if (!date) return 'Unable to determine the time of year!';
-  if (Object.prototype.toString.call(date) === '[object Date]') {
-
+  if ((Object.prototype.toString.call(date) !== '[object Date]') || (Object.keys(date).length !== Object.keys(new Date()).length)) {
+    throw new Error('Invalid date!');}
 
     const month = date.getMonth();
 
@@ -28,8 +28,7 @@ export default function getSeason(date) {
     } else if (month === 11 || (month >= 0 && month < 2)) {
       return 'winter';
     }
-  }
-  else {throw new Error("Invalid date!");}
+
 }
 
 
