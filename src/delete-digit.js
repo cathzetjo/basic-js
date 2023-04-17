@@ -1,3 +1,5 @@
+const { NotImplementedError } = require('../extensions/index.js');
+
 /**
  * Given some integer, find the maximal number you can obtain
  * by deleting exactly one digit of the given number.
@@ -9,7 +11,7 @@
  * For n = 152, the output should be 52
  *
  */
-export default function deleteDigit(n) {
+function deleteDigit(n) {
   const string = n+'';
   const array = string.split('');
   const min = Math.min.apply(null, array);
@@ -23,3 +25,7 @@ export default function deleteDigit(n) {
   }
   return Number(array.join(''));
 }
+
+module.exports = {
+  deleteDigit
+};

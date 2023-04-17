@@ -1,3 +1,5 @@
+const { NotImplementedError } = require('../extensions/index.js');
+
 /**
  * Given a number, replace this number with
  * the sum of its digits until we get to a one digit number.
@@ -10,7 +12,7 @@
  * For 91, the result should be 1 (9 + 1 = 10, 1 + 0 = 1)
  *
  */
-export default function getSumOfDigits(n) {
+function getSumOfDigits(n) {
 
   if (n<10) { return n; }
 
@@ -22,3 +24,7 @@ export default function getSumOfDigits(n) {
   return (getSumOfDigits(Number(sum)));
 
 }
+
+module.exports = {
+  getSumOfDigits
+};

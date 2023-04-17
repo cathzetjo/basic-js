@@ -1,3 +1,5 @@
+const { NotImplementedError } = require('../extensions/index.js');
+
 /**
  * Implement class VigenereCipheringMachine that allows us to create
  * direct and reverse ciphering machines according to task description
@@ -17,14 +19,15 @@
  * reverseMachine.decrypt('AEIHQX SX DLLU!', 'alphonse') => '!NWAD TA KCATTA'
  * 
  */
-export default class VigenereCipheringMachine {
-
+class VigenereCipheringMachine {
   encrypt(string, key) {
     if (!string || !key) {throw new Error('Incorrect arguments!');}
   }
-
   decrypt(string, key) {
     if (!string || !key) {throw new Error('Incorrect arguments!');}
   }
-
 }
+
+module.exports = {
+  VigenereCipheringMachine
+};

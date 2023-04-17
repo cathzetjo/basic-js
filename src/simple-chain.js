@@ -1,11 +1,12 @@
+const { NotImplementedError } = require('../extensions/index.js');
+
 /**
  * Implement chainMaker object according to task description
  * 
  */
-export default {
-  array: [],
-
-  getLength() {
+const chainMaker = {
+    array: [],
+    getLength() {
     return this.array.length;
   },
 
@@ -37,4 +38,8 @@ export default {
     this.array = [];
     return final;
   },
+};
+
+module.exports = {
+  chainMaker
 };
