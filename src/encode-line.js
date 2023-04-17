@@ -1,3 +1,5 @@
+const { NotImplementedError } = require('../extensions/index.js');
+
 /**
  * Given a string, return its encoding version.
  *
@@ -8,8 +10,10 @@
  * For aabbbc should return 2a3bc
  *
  */
-export default function encodeLine(str) {
-
+function encodeLine(str) {
   return str.replace(/(.)\1+/g, (match, p1) => match.length + p1);
-
 }
+
+module.exports = {
+  encodeLine
+};

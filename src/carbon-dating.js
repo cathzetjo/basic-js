@@ -1,3 +1,5 @@
+const { NotImplementedError } = require('../extensions/index.js');
+
 const MODERN_ACTIVITY = 15;
 const HALF_LIFE_PERIOD = 5730;
 
@@ -15,8 +17,7 @@ const HALF_LIFE_PERIOD = 5730;
  * dateSample('WOOT!') => false
  *
  */
-export default function dateSample(sampleActivity) {
-
+function dateSample(sampleActivity) {
   const min = 0;
   const max = 15;
 
@@ -29,3 +30,7 @@ export default function dateSample(sampleActivity) {
 
   return Math.ceil(formula);
 }
+
+module.exports = {
+  dateSample
+};
